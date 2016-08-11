@@ -3,6 +3,18 @@ An Owin handler for the prometheus-net metrics tracking library
 
 Using the awesome library [prometheus-net](https://github.com/andrasm/prometheus-net) from [andrasm](https://github.com/andrasm) serve the metrics endpoints using the Owin middleware.
 
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/dustinchilson/PrometheusNet.Owin/master/LICENSE)
+[![Build status](https://ci.appveyor.com/api/projects/status/gse68cbbu7dwv8id/branch/master?svg=true)](https://ci.appveyor.com/project/dustinchilson/prometheusnet-owin/branch/master)
+[![NuGet](https://img.shields.io/nuget/v/PrometheusNet.Owin.svg)](https://www.nuget.org/packages/PrometheusNet.Owin/)
+[![Dependency Status](https://dependencyci.com/github/dustinchilson/PrometheusNet.Owin/badge)](https://dependencyci.com/github/dustinchilson/PrometheusNet.Owin)
+
+## Installation ##
+This library is packaged as a nuget package available [here](https://www.nuget.org/packages/PrometheusNet.Owin/)
+
+```
+Install-Package PrometheusNet.Owin
+```
+
 ## Basic Usage ##
 Once running you should see all of the stats running from your server (ex http://localhost:1234/metrics)
 ```CSharp
