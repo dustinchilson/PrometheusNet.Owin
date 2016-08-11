@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using Owin;
 using Prometheus.Advanced;
 
@@ -40,6 +41,8 @@ namespace Prometheus.Owin
                         var collected = options.CollectorRegistry.CollectAll();
                         ScrapeHandler.ProcessScrapeRequest(collected, contentType, outputStream);
                     }
+
+                    await Task.CompletedTask.ConfigureAwait(false);
                 });
             });
 
