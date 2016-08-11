@@ -1,5 +1,5 @@
 # PrometheusNet.Owin #
-An Owin handler for the prometheus-net metrics tracking
+An Owin handler for the prometheus-net metrics tracking library
 
 Using the awesome library [prometheus-net](https://github.com/andrasm/prometheus-net) from [andrasm](https://github.com/andrasm) serve the metrics endpoints using the Owin middleware.
 
