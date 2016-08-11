@@ -27,7 +27,6 @@ Global
 		{B1DDBE27-0F2B-4877-8315-004AF97E64AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B1DDBE27-0F2B-4877-8315-004AF97E64AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1DDBE27-0F2B-4877-8315-004AF97E64AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B1DDBE27-0F2B-4877-8315-004AF97E64AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
