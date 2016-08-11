@@ -32,7 +32,6 @@ namespace owin_tester
         public void Configuration(IAppBuilder app)
         {
             var options = new PrometheusOptions();
-            options.MapPath = "prometheus";
             options.Collectors.Add(new DotNetStatsCollector());
             options.Collectors.Add(new PerfCounterCollector());
 

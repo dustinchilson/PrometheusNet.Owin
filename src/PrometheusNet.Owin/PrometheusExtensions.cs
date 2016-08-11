@@ -42,7 +42,7 @@ namespace Prometheus.Owin
                         ScrapeHandler.ProcessScrapeRequest(collected, contentType, outputStream);
                     }
 
-                    await Task.CompletedTask.ConfigureAwait(false);
+                    await Task.FromResult(0).ConfigureAwait(false);
                 });
             });
 
