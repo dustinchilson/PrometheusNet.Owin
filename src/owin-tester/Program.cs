@@ -5,9 +5,12 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Owin.Hosting;
+using Ninject;
+using Ninject.Modules;
 using Owin;
 using Prometheus.Advanced;
 using Prometheus.Owin;
+using PrometheusNet.Owin.Ninject;
 
 namespace owin_tester
 {
@@ -27,13 +30,24 @@ namespace owin_tester
         }
     }
 
+    public class DImodule : NinjectModule
+    {
+        public override void Load()
+        {
+            this.Bind<IOnDemandCollector>().To<DotNetStatsCollector>();
+            this.Bind<IOnDemandCollector>().To<PerfCounterCollector>();
+        }
+    }
+
     public class Startup
     {
         public void Configuration(IAppBuilder app)
         {
+            var kernel = new StandardKernel();
+            kernel.Load<DImodule>();
+
             var options = new PrometheusOptions();
-            options.Collectors.Add(new DotNetStatsCollector());
-            options.Collectors.Add(new PerfCounterCollector());
+            options.CollectorLocator = new NinjectCollectorLocator(kernel);
 
             app.UsePrometheusServer(options);
         }

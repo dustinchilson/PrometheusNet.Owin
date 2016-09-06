@@ -10,6 +10,7 @@ namespace Prometheus.Owin
         private string _mapPath = "metrics";
         private ICollectorRegistry _collectorRegistry = DefaultCollectorRegistry.Instance;
         private List<IOnDemandCollector> _collectors = new List<IOnDemandCollector>();
+        private ICollectorLocator _collectorLocator = new DefaultCollectorLocator();
 
         public string MapPath
         {
@@ -44,6 +45,18 @@ namespace Prometheus.Owin
             set
             {
                 _collectors = value;
+            }
+        }
+        
+        public ICollectorLocator CollectorLocator
+        {
+            get
+            {
+                return _collectorLocator;
+            }
+            set
+            {
+                _collectorLocator = value;
             }
         }
     }

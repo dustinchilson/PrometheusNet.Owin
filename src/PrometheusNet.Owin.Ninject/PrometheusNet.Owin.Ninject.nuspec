@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  For more info on this file format visit http://docs.nuget.org/docs/reference/nuspec-reference.
+-->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">  
+  <metadata>
+    <id>PrometheusNet.Owin.Ninject</id>
+    <version>$version$</version>
+    <authors>Dustin Chilson</authors>
+    <description>A ninject service locator for the PrometheusNet.Owin handler.</description>
+    <language>en-US</language>
+    <projectUrl>https://github.com/dustinchilson/PrometheusNet.Owin</projectUrl>
+    <licenseUrl>https://raw.githubusercontent.com/dustinchilson/PrometheusNet.Owin/master/LICENSE</licenseUrl>
+  </metadata>
+</package>

@@ -15,10 +15,8 @@ namespace Prometheus.Owin
 
             if (options.CollectorRegistry == DefaultCollectorRegistry.Instance)
             {
-                // Default to DotNetStatsCollector if none speified
-                // For no collectors, pass an empty collection
-                if (!options.Collectors.Any())
-                    options.Collectors.Add(new DotNetStatsCollector());
+                if (options.Collectors != null && !options.Collectors.Any() && options.CollectorLocator != null)
+                    options.Collectors.AddRange(options.CollectorLocator.Get());
 
                 DefaultCollectorRegistry.Instance.RegisterOnDemandCollectors(options.Collectors);
             }
