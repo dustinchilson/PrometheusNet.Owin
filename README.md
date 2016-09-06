@@ -5,17 +5,20 @@ Using the awesome library [prometheus-net](https://github.com/andrasm/prometheus
 
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/dustinchilson/PrometheusNet.Owin/master/LICENSE)
 [![Build status](https://ci.appveyor.com/api/projects/status/gse68cbbu7dwv8id/branch/master?svg=true)](https://ci.appveyor.com/project/dustinchilson/prometheusnet-owin/branch/master)
-[![NuGet](https://img.shields.io/nuget/v/PrometheusNet.Owin.svg)](https://www.nuget.org/packages/PrometheusNet.Owin/)
 [![Dependency Status](https://dependencyci.com/github/dustinchilson/PrometheusNet.Owin/badge)](https://dependencyci.com/github/dustinchilson/PrometheusNet.Owin)
 
-## Installation ##
+## PrometheusNet.Owin ##
+
+[![NuGet](https://img.shields.io/nuget/v/PrometheusNet.Owin.svg)](https://www.nuget.org/packages/PrometheusNet.Owin/)
+
+### Installation ###
 This library is packaged as a nuget package available [here](https://www.nuget.org/packages/PrometheusNet.Owin/)
 
 ```
 Install-Package PrometheusNet.Owin
 ```
 
-## Basic Usage ##
+### Basic Usage ###
 Once running you should see all of the stats running from your server (ex http://localhost:1234/metrics)
 ```CSharp
 public void Configuration(IAppBuilder app)
@@ -24,7 +27,7 @@ public void Configuration(IAppBuilder app)
 }
 ```
 
-## Advanced Usage ##
+### Advanced Usage ###
 Once running you should see all of the stats running from your server (ex http://localhost:1234/prometheus)
 
 ```CSharp
@@ -34,6 +37,30 @@ public void Configuration(IAppBuilder app)
     options.MapPath = "prometheus";
     options.Collectors.Add(new DotNetStatsCollector());
     options.Collectors.Add(new PerfCounterCollector());
+
+    app.UsePrometheusServer(options);
+}
+```
+
+## PrometheusNet.Owin.Ninject ##
+
+[![NuGet](https://img.shields.io/nuget/v/PrometheusNet.Owin.Ninject.svg)](https://www.nuget.org/packages/PrometheusNet.Owin.Ninject/)
+
+### Installation ###
+This library is packaged as a nuget package available [here](https://www.nuget.org/packages/PrometheusNet.Owin.Ninject/)
+
+```
+Install-Package PrometheusNet.Owin.Ninject
+```
+
+### Usage ###
+Once running you should see all of the stats running from your server (ex http://localhost:1234/prometheus)
+
+```CSharp
+public void Configuration(IAppBuilder app)
+{
+    var options = new PrometheusOptions();
+    options.CollectorLocator = new NinjectCollectorLocator(kernel);
 
     app.UsePrometheusServer(options);
 }
