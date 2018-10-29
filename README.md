@@ -7,8 +7,7 @@ An Owin handler for the prometheus-net metrics tracking library
 Using the awesome library [prometheus-net](https://github.com/andrasm/prometheus-net) from [andrasm](https://github.com/andrasm) serve the metrics endpoints using the Owin middleware.
 
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/dustinchilson/PrometheusNet.Owin/master/LICENSE)
-[![Build status](https://ci.appveyor.com/api/projects/status/gse68cbbu7dwv8id/branch/master?svg=true)](https://ci.appveyor.com/project/dustinchilson/prometheusnet-owin/branch/master)
-[![Dependency Status](https://dependencyci.com/github/dustinchilson/PrometheusNet.Owin/badge)](https://dependencyci.com/github/dustinchilson/PrometheusNet.Owin)
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 ## PrometheusNet.Owin ##
 
