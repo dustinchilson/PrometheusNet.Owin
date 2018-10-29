@@ -1,5 +1,5 @@
 # DEPRECATED
-This repository is no longer maintained, I reccomend switching over to https://github.com/PrometheusClientNet/Prometheus.Client
+This repository is no longer maintained, I recommend switching over to https://github.com/PrometheusClientNet/Prometheus.Client
 
 # PrometheusNet.Owin #
 An Owin handler for the prometheus-net metrics tracking library
